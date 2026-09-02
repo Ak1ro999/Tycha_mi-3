@@ -1,0 +1,788 @@
+/* =========================
+   PODSTAWA
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080b1a;
+    color: white;
+}
+
+
+/* =========================
+   RICK PHRASE
+========================= */
+
+#rickPhrase {
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#rickPhrase:hover {
+    color: #c58cff;
+    transform: scale(1.03);
+    text-shadow: 0 0 20px rgba(197, 140, 255, 0.7);
+}
+
+
+/* =========================
+   GŁÓWNY EKRAN
+========================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 25px 8%;
+
+    background:
+        linear-gradient(
+            rgba(8, 11, 26, 0.45),
+            rgba(8, 11, 26, 0.95)
+        ),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600");
+
+    background-size: cover;
+    background-position: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: #d9b3ff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff7de9;
+}
+
+.hero-text {
+    max-width: 700px;
+    margin-top: 190px;
+}
+
+.hero-text p:first-child {
+    color: #c58cff;
+    letter-spacing: 4px;
+    font-size: 13px;
+}
+
+.hero-text h1 {
+    font-size: 65px;
+    margin: 20px 0;
+}
+
+.hero-text p {
+    color: #d1d1dc;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   GŁÓWNY PRZYCISK
+========================= */
+
+.button {
+    display: inline-block;
+
+    margin-top: 30px;
+    padding: 15px 28px;
+
+    border-radius: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #ff66d9,
+        #8b5cff
+    );
+
+    color: white;
+    text-decoration: none;
+
+    transition: 0.35s;
+
+    box-shadow:
+        0 0 20px rgba(155, 92, 255, 0.35);
+}
+
+.button:hover {
+    box-shadow:
+        0 0 30px rgba(255, 102, 217, 0.5);
+}
+
+
+/* =========================
+   TAPNIJ - ANIMACJA
+========================= */
+
+.hero-text .button {
+    animation: tapnij 2s ease-in-out infinite;
+}
+
+.hero-text .button:hover {
+    animation-play-state: paused;
+    transform: scale(1.05);
+}
+
+@keyframes tapnij {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   SEKCJE
+========================= */
+
+section {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.subtitle {
+    color: #a96cff;
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+section h2 {
+    font-size: 42px;
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   NASZE ZDJĘCIA
+========================= */
+
+.photos {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.photo {
+    background: #11152b;
+
+    border: 1px solid #2d335a;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.35s;
+}
+
+.photo img {
+    width: 100%;
+
+    height: 340px;
+
+    object-fit: cover;
+
+    transition: 0.35s;
+}
+
+
+/* BLUR RESZTY ZDJĘĆ */
+
+.photos:hover .photo {
+    filter: blur(3px);
+    opacity: 0.55;
+}
+
+
+/* WYBRANE ZDJĘCIE */
+
+.photos .photo:hover {
+    filter: blur(0);
+
+    opacity: 1;
+
+    transform:
+        translateY(-10px)
+        scale(1.04);
+
+    border-color: #ff6ce5;
+
+    box-shadow:
+        0 0 30px rgba(255, 108, 229, 0.35);
+
+    z-index: 2;
+}
+
+.photo:hover img {
+    transform: scale(1.08);
+}
+
+.photo h3 {
+    padding: 18px 18px 6px;
+}
+
+.photo p {
+    padding: 0 18px 18px;
+
+    color: #999db3;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   DODATKOWE ZDJĘCIA
+========================= */
+
+.extraPhotos {
+    display: none;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+    padding: 15px;
+}
+
+.extraPhotos img {
+    width: 100%;
+
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.extraPhotos img:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   ULUBIONE
+========================= */
+
+#favorites {
+    background: #0c1023;
+}
+
+.favorites {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.favorite {
+    background: #141933;
+
+    padding: 35px 20px;
+
+    border-radius: 20px;
+
+    border: 1px solid #2b3158;
+
+    transition: 0.3s;
+}
+
+.favorite:hover {
+    transform: translateY(-8px);
+
+    border-color: #ff6ce5;
+
+    box-shadow:
+        0 0 25px rgba(255, 108, 229, 0.25);
+}
+
+.favorite div {
+    font-size: 55px;
+
+    margin-bottom: 18px;
+}
+
+.favorite h3 {
+    margin-bottom: 10px;
+}
+
+.favorite p {
+    color: #999db3;
+}
+
+
+/* =========================
+   SECRET
+========================= */
+
+#secret {
+    background:
+        linear-gradient(
+            rgba(8, 11, 26, 0.8),
+            rgba(8, 11, 26, 0.95)
+        ),
+        url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+/* =========================
+   ŁADNY PRZYCISK SECRET
+========================= */
+
+#secretButton {
+    margin-top: 30px;
+
+    padding: 18px 45px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff69da,
+            #d56cff,
+            #8b5cff
+        );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.35s;
+
+    box-shadow:
+        0 0 20px rgba(255, 105, 218, 0.35),
+        0 0 40px rgba(139, 92, 255, 0.25);
+}
+
+#secretButton:hover {
+    transform:
+        translateY(-5px)
+        scale(1.08);
+
+    box-shadow:
+        0 0 25px #ff69da,
+        0 0 45px #b26cff,
+        0 0 65px rgba(139, 92, 255, 0.6);
+}
+
+#secretButton:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================
+   UKRYTA WIADOMOŚĆ
+========================= */
+
+#secretText {
+    display: none;
+
+    max-width: 650px;
+
+    margin: 35px auto 0;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 105, 218, 0.12);
+
+    border: 1px solid #ff69da;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    animation: appear 0.5s ease;
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   KONIEC
+========================= */
+
+.final {
+    background: #0c1023;
+}
+
+.final h2 {
+    font-size: 45px;
+
+    margin-bottom: 25px;
+}
+
+.final p {
+    max-width: 650px;
+
+    margin: 10px auto;
+
+    color: #b5b7c7;
+
+    line-height: 1.7;
+}
+
+.final h3 {
+    margin-top: 30px;
+
+    color: #d9b3ff;
+}
+
+
+/* =========================
+   STOPKA
+========================= */
+
+footer {
+    padding: 40px;
+
+    text-align: center;
+
+    background: #050711;
+
+    color: #777b91;
+}
+
+footer p:first-child {
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .photos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .favorites {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+}
+
+
+/* =========================
+   TELEFON
+========================= */
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .hero {
+        padding: 20px 5%;
+    }
+
+    .hero-text {
+        margin-top: 120px;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    .photos {
+        grid-template-columns: 1fr;
+    }
+
+    .favorites {
+        grid-template-columns: 1fr;
+    }
+
+    .extraPhotos {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 70px 5%;
+    }
+  
+}''
+
+/* ===================================================
+   PASSWORD SCREEN
+=================================================== */
+
+body.siteLocked{
+    overflow:hidden;
+}
+
+#passwordScreen{
+    position:fixed;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+    overflow:hidden;
+
+    transition:opacity .9s ease, visibility .9s ease;
+}
+
+/* Zdjęcie kotka na CAŁY ekran */
+
+.passwordBackground{
+    position:absolute;
+    inset:0;
+}
+
+.passwordBackground img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    filter:blur(18px) brightness(.35);
+
+    transform:scale(1.08);
+}
+
+/* Ciemna warstwa */
+
+.passwordOverlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(8,11,26,.35),
+            rgba(8,11,26,.75)
+        );
+}
+
+/* Okno hasła */
+
+.passwordBox{
+    position:relative;
+    z-index:2;
+
+    width:min(90%,420px);
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    border-radius:28px;
+
+    background:rgba(17,21,43,.88);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,105,218,.35);
+
+    box-shadow:
+        0 0 30px rgba(255,105,218,.25),
+        0 0 70px rgba(139,92,255,.15);
+
+    animation:passwordAppear .8s ease;
+}
+
+.passwordIcon{
+    font-size:58px;
+    margin-bottom:15px;
+}
+
+.passwordBox h2{
+    font-size:34px;
+    color:#ffd2ff;
+    margin-bottom:10px;
+}
+
+.passwordBox p{
+    color:#bfbfd8;
+    margin-bottom:22px;
+}
+
+#passwordInput{
+    width:100%;
+
+    padding:16px;
+
+    border-radius:30px;
+
+    border:1px solid #424872;
+
+    background:#0c1023;
+
+    color:white;
+
+    outline:none;
+
+    text-align:center;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+#passwordInput:focus{
+
+    border-color:#ff69da;
+
+    box-shadow:
+        0 0 18px rgba(255,105,218,.35);
+
+}
+
+.passwordBox button{
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:17px;
+    font-weight:bold;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff69da,
+            #8b5cff
+        );
+
+    transition:.3s;
+}
+
+.passwordBox button:hover{
+
+    transform:translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 0 25px rgba(255,105,218,.55);
+
+}
+
+#wrongPassword{
+
+    display:none;
+
+    color:#ff8fd7;
+
+    margin-top:18px;
+    margin-bottom:0;
+
+    font-weight:bold;
+}
+
+#passwordScreen.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+@keyframes passwordAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}

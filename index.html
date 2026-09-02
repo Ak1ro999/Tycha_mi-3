@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ŚWIAT  MY LITTLE PONY</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="passwordScreen">
+
+    <div class="passwordBackground">
+        <img src="kotki.png" alt="Kotek">
+    </div>
+
+    <div class="passwordOverlay"></div>
+
+    <div class="passwordBox">
+
+        <div class="passwordIcon">💜</div>
+
+        <h2>Tylko dla nas</h2>
+
+        <p>Wpisz nasze hasło, żeby wejść.</p>
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="Hasło..."
+        >
+
+        <button onclick="checkPassword()">
+            Wejdź 💜
+        </button>
+
+        <p id="wrongPassword">
+            ❌ Złe hasło.
+        </p>
+
+    </div>
+
+</div>
+
+    <!-- =========================
+         GŁÓWNY EKRAN
+    ========================== -->
+
+    <header class="hero">
+
+        <nav>
+            <h2>💜 Twój Świat 💜</h2>
+
+            <div>
+                <a href="#photos">Photo</a>
+                <a href="#favorites">Ulubione</a>
+                <a href="#secret">Secret</a>
+            </div>
+        </nav>
+
+        <div class="hero-text">
+
+            <p>FOR MY FAVORITE PERSON btw</p>
+
+            <h1 id="rickPhrase" onclick="sayRick()">
+    Wubba lubba dub-dub
+</h1>
+
+            <p>
+                znajdziesz tutaj wszystko co lubisz :3 💜
+            </p>
+
+            <a href="#photos" class="button">
+                ↓ Tapnij ↓
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         ZDJĘCIA
+    ========================== -->
+
+    <section id="photos">
+
+        <p class="subtitle">Nasze wspomnienia</p>
+
+        <h2>Nasze Momenty</h2>
+
+        <div class="photos">
+
+
+            <!-- ZDJĘCIE 1 -->
+
+            <div class="photo" onclick="showPhotos('extra1')">
+
+                <img src="file:///C:/Users/pc/Pictures/my.png" alt="Photo 1">
+
+                <h3>❤️❤️❤️</h3>
+
+                <p>
+                    jebany park ale siedzenie bylo :33333
+                </p>
+
+                <div class="extraPhotos" id="extra1">
+
+                    <img src="eat.png">
+                    <img src="gg.png">
+
+                </div>
+
+            </div>
+
+
+            <!-- ZDJĘCIE 2 -->
+
+            <div class="photo" onclick="showPhotos('extra2')">
+
+                <img src="file:///C:/Users/pc/Pictures/xd.png" alt="Photo 2">
+
+                <h3>XD</h3>
+
+                <p>
+                    01.09.2026
+                </p>
+
+                <div class="extraPhotos" id="extra2">
+
+                    <img src="us3.png">
+                    <img src="us2.png">
+
+                </div>
+
+            </div>
+
+
+            <!-- ZDJĘCIE 3 -->
+
+            <div class="photo" onclick="showPhotos('extra3')">
+
+                <img src="file:///C:/Users/pc/Pictures/ramen.png" alt="Photo 3">
+
+                <h3>💜</h3>
+
+                <p>
+                    RAMENNN
+                </p>
+
+                <div class="extraPhotos" id="extra3">
+
+                    <img src="kotek.png">
+                    <img src="solo.jpg">
+                    <img src="princess.png">
+                    <img src="XDDD.png">
+
+                </div>
+
+            </div>
+
+
+            <!-- ZDJĘCIE 4 -->
+
+            <div class="photo" onclick="showPhotos('extra4')">
+
+                <img src="file:///C:/Users/pc/Pictures/most.png" alt="Photo 4">
+
+                <h3>Gdansk 💜</h3>
+
+                <p>
+                    burgery blisko.... jak to tera pisze jestem glodny szczerze
+                </p>
+
+                <div class="extraPhotos" id="extra4">
+
+                    <img src="broo.png">
+                    <img src="cute.png">
+                    <img src="mojkotek.png">
+                    <img src="koooot.png">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ULUBIONE
+    ========================== -->
+
+    <section id="favorites">
+
+        <p class="subtitle">
+            twoje ulubione
+        </p>
+
+        <h2>
+            To co ty lubisz 🐱
+        </h2>
+
+        <div class="favorites">
+
+            <div class="favorite">
+
+                <div>🐱</div>
+
+                <h3>Kotki</h3>
+
+                <p>
+                    Milutkie kotki 🐱
+                </p>
+
+            </div>
+
+
+            <div class="favorite">
+
+                <div>🦄</div>
+
+                <h3>My Little Pony</h3>
+
+                <p>
+                    Ulubione postacie ✨
+                </p>
+
+            </div>
+
+
+            <div class="favorite">
+
+                <div>🦈</div>
+
+                <h3>Rekiny</h3>
+
+                <p>
+                    Oceaniczne drapieżniki 🌊
+                </p>
+
+            </div>
+
+
+            <div class="favorite">
+
+                <div>🌊</div>
+
+                <h3>Ocean</h3>
+
+                <p>
+                    Morze, woda i fale.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SECRET
+    ========================== -->
+
+    <section id="secret">
+
+        <p class="subtitle">
+            SECRET
+        </p>
+
+        <h2>
+            Bardzo wazne otwórz to
+        </h2>
+
+        <p>
+            <b>Kliknij aby otworzyć</b>
+        </p>
+
+        <button id="secretButton" onclick="showSecret()">
+             💜 Otwórz wiadomość 💌
+        </button>
+
+        <div id="secretText">
+
+            chcialem przypomniec ze jestes moim kotekim xd 🫶🫶🫶
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KONIEC
+    ========================== -->
+
+    <section class="final">
+
+        <h2>
+            Cala stronka jest dla ciebie
+        </h2>
+
+        <p>
+            mam nadzieje ze ci sie spodobala
+        </p>
+
+        <p>
+            popacz sie na misia i zobacz co jest napisane :3
+        </p>
+
+        <h3>
+             Tycha_mi<3
+        </h3>
+
+    </section>
+
+
+    <!-- =========================
+         STOPKA
+    ========================== -->
+
+    <footer>
+
+        <p>
+            🐱 🌊 🦈 🦄 💜
+        </p>
+
+        <p>
+            Made in china Blyat
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
